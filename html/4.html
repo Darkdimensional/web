@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>列表</title>
+</head>
+<body>
+    无序列表：内容列表： ul +li 无顺序关系
+    有序列表：内容列表： ol+li 有顺序关系
+    自定义列表：内容标题+内容  列表  dl+dt+dd
+    <br>
+    <!-- 无序列表 -->
+    <ul style="list-style-type:circle">
+        <li>苹果</li>
+        <li style="list-style-type: square">香蕉</li>
+        <li style="list-style-type:disc">西瓜</li>
+    </ul><br>
+    
+    <!-- 有序列表 -->
+    <p>好吃排行榜</p>
+    <ol style="list-style-type: decimal">
+        <li>蔬菜</li>
+        <li>水果</li>
+    </ol>
+    <ol style="list-style-type: lower-alpha">
+        <li>肉肉</li>
+        <li>饼</li>
+    </ol>
+    <ol style="list-style-type:upper-roman">
+        <li>汤</li>
+        <li>饮料</li>
+    </ol><br>
+
+    <!-- 混合列表 -->
+    <p>好吃排行榜</p>
+    <ol>
+        <li>蔬菜
+            <ul style="list-style-type:disc">
+                <li>空心菜</li>
+                <li>萝卜</li>
+            </ul>
+        </li>
+        <li>水果
+            <ul style="list-style-type: circle">
+                <li>苹果</li>
+                <li>香蕉</li>
+            </ul>
+        </li>
+        <li>肉
+            <ul style="list-style-type: square">
+                <li>鸡肉</li>
+                <li>牛肉</li>
+            </ul>
+        </li>
+    </ol>
+
+</body>
+</html>

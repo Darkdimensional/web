@@ -1,0 +1,54 @@
+网页：html文档 经过浏览器渲染以后展现出来的页面
+
+和网页相关的技术
+html + css + javascript
+html+css 页面内容
+JavaScript 页面行为
+
+html： 负责页面的结构
+css： 负责页面的样式
+
+html代码  两大部分
+1、文本
+2、标签：
+    开始标签<tag>和结束标签</tag>
+    一般是成对出现。
+
+元素/标签 <tag>内容</tag>
+
+属性： 在元素中添加附加信息<tag name = "value"></tag>
+    特点：
+        开始标签里面
+        格式：名字=值
+        用引号括起来 "" 或 ''
+
+css 属性：
+    <tag style = "color:red;"></tag>
+
+html的学习：熟悉标签和css属性
+用这些命令指挥浏览器
+
+标签：
+    文本
+    图片
+    链接
+    列表
+    表格
+    表单
+    框架->嵌套页面
+语法：
+    1、html从上到下解析
+    2、元素可以互相嵌套
+    3、html的结构
+        <!DOCTYPE html>
+        <!-- 文档类型  -->
+        <html lang="en">
+        <!-- 语言 en  -->
+        <head>
+            <meta charset="UTF-8">
+            <title>标题t</title>
+        </head>
+        <body>
+            hello world
+        </body>
+        </html>

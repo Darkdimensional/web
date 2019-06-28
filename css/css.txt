@@ -1,0 +1,107 @@
+一、选择器
+    1.基本选择器:(*)通配符  标签div    (#)ID选择器  (.)class
+    2.组合选择器：把基本组合器用特殊符号串在一起
+        分组(,)     div,p
+        嵌套(空格)  div p子孙标签
+        子选择器(>)  div>p子标签
+        相邻同级标签(+)  div+p
+    3.属性选择器 基本选择器[属性 = 值]
+        = 全等
+        ~= 包含 （单词）
+        ^=开始
+        ￥=结束
+    4.伪元素选择器
+        伪元素：假的 -> 真的 （我们自己写的）
+        开始：before
+        结束：after 
+        例：
+        p::before {
+                content:"before";
+        }
+        块元素：
+        第一个字：first-letter
+        第一行：first-line
+二、原理
+    1.优先原则：后解析的内容会覆盖之前解析的内容
+    2.继承原则：嵌套里面的标签 拥有外部标签的部分样式
+
+    优先原则：
+    1、同一个选择器，从上往下执行
+        div {
+            color：red；
+            color：yellow；
+        }
+    2、同一类型的选择器：从上往下执行
+        div {
+            color：red；
+        }
+        div {
+            color：yellow；
+        }
+    3、不同类型的选择器，优先器
+        先低优先级在高优先级  (低)* div class id (高)
+        .cl {
+            background-color：yellow；
+        }
+        div {
+            background-color：red；
+        }
+    4、外部样式和内部样式  合并后一起解析
+        先外部样式再内部样式（内部样式：HTML中的样式，外部样式：css中的样式）
+    5、内联样式：
+        外部和内部样式解析后最后解析（内联样式：标签的的样式）
+    6、加了important字段的最后执行
+        div {
+            background-color：red!important;
+        }
+    
+    继承原则：
+    1、跟文本相关的才可以继承
+    2、块元素 宽度不被设置时候继承父元素宽度
+
+三、颜色rgb（255,0,0）
+    R   红色 浅  深  0 - 255
+    G   绿色 
+    B   蓝
+   1、 rgb（255,0,0）
+    2、名称
+    3、16进制 #FF0000 = #F00
+
+四、背景
+    background-image: url("logo.png");
+    background-repeat: no-repeat; 不平铺
+    background-position:50% 0%;(left content right top content bottom)
+    background-attachment:fixed;固定
+
+    background: color image repeat attachment position 
+
+五、字体
+    font-family:"宋体"，"微软雅黑"，"Microsoft YaHei";
+    font-size:30px;(字体的高度，默认16=1em)
+    font-weight:100-900;(lighter normal bold)
+    font-style:italic;
+    font: style weight  size/line-height family(最少要size和family)
+    
+    letter-spacing:0px;字距
+    word-spacing:0px;空格距离
+    direction:ltr; left to right 字体排版方向
+    text-decoration:line-through;上下划线
+    text-align:center(justify);对齐
+    text-indent:60px;缩进
+    text-transform:uppercase;字母大写 lowercase 字母小写 capitalize首字母大写
+
+    设置省略号：
+    width:250px;
+    white-space:nowrap;不包裹，超出容器
+    overflow:hidden;隐藏
+    text-overflow:ellipsis;省略号
+六、链接
+    伪类：
+    初始状态 link
+    被访问  visited
+    鼠标移动 hover
+    点击 active
+    例：a：link {
+        
+    }
+
