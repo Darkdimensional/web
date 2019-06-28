@@ -105,3 +105,52 @@
         
     }
 
+七、盒子
+    所以元素 ->矩形盒子
+
+    盒子属性：
+    内容
+    内边距 margin: 
+    盒子边框 border:
+    外边距 padding:
+
+    margin重叠(两个盒子上下内边距重叠)
+    1.平级的元素  最大值
+        float
+         inline-block;
+    2.嵌套关系   (封装上下口)
+        border
+        padding
+        overflow
+
+八、布局
+    float:让模块漂浮起来
+    漂浮后要重新回到标准流
+    clear:both;
+    但是清除总是在下一个块，最后一个就要多余创建一个
+    所以用伪元素清理浮动
+    .container::after{
+        content:" ";
+        display;block;因为after是行元素要转换成块元素
+        clera:both;
+    }
+    清除margin 
+    .container::before, .container::after  {
+        content:"";
+        display: table;
+    }
+
+九、定位
+    定位: 固定位置 
+     position: fixed;
+    bottom: 100px;
+    right: 50px; 
+
+    相对定位
+     position: relative;
+     绝对定位 
+    一级级往上走找到position停止
+    position: absolute; 
+
+    相对定位区别于绝对定位：
+    相对定位相当与灵魂出窍，肉体还占据的原本的位子

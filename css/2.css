@@ -1,0 +1,40 @@
+div {
+    border: 1px solid black;
+    background: green;
+}
+.div1,div2,div3,div4 {
+    float: left;
+    background: red;
+    width: 150px;
+    height: 100px;
+}
+.div3 {
+    clear: both;
+}
+.container::after{
+    content:"";
+    display:block;
+    clera:both;
+}
+/* 清除margin */
+.container::before {
+    content:"";
+    display: table;
+}
+/*
+float:让模块漂浮起来
+漂浮后要重新回到标准流
+clear:both;
+但是清除总是在下一个块，最后一个就要多余创建一个
+所以用伪元素清理浮动
+.container::after{
+    content:" ";
+    display;block;因为after是行元素要转换成块元素
+    clera:both;
+}
+清除margin 
+.container::before, .container::after  {
+    content:"";
+    display: table;
+}
+*/

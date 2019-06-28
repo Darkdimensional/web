@@ -1,0 +1,48 @@
+/* 盒子
+所以元素 ->矩形盒子
+
+盒子分为：
+内容
+内边距 margin: 
+盒子边框 border:
+外边距 padding:
+*/
+
+.box1 {
+    /* 盒子边框 */
+    border:  5px solid black;
+    /* 内边距 
+    上下左右 
+    padding:10px;
+    上下20px 左右50px 
+    padding: 20px 50px;
+    上20px 左右50px 下60px 
+    padding: 20px 50px 60px;
+    上20px右30px下40px左50px  顺时针
+    padding: 20px 30px 40px 50px;*/
+
+    margin: 30px;
+    background: yellow;
+}
+div {
+    width: 800px;
+}
+.box2 {
+    margin: 60px;
+    background: green;
+}
+.box3 {
+    /* display: inline-block; */
+    margin: 30px;
+    background: red;
+    float: left;
+}
+/* margin重叠(两个盒子上下内边距重叠)
+1.平级的元素  最大值
+    float
+    inline-block;
+2.嵌套关系   (封装上下口)
+    border
+    padding
+    overflow
+*/
