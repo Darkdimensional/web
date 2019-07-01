@@ -1,8 +1,14 @@
-body {
-    height: 2500px;
+body , li , ul {
     margin: 0;
     padding: 0;
+    
+}
+body {
     font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    height: 2500px;
+}
+ul {
+    list-style-type: none;
 }
 a {
     text-decoration: none;
@@ -17,7 +23,8 @@ a {
     margin: 0 auto;
     width: 1226px;
 }
-.container::before,.container::after{
+.container::before , .container::after,
+.clearfix::before , .clearfix::after{
     content: "";
     display: table;
 }
@@ -81,4 +88,74 @@ a {
 }
 .topbar-info .sep {
     padding: 0 10px;
+}
+
+
+
+/* header */
+.header {
+    height: 100px;
+}
+
+.header-logo {
+    float: left;
+    width: 62px;
+    margin-top: 22px;
+    height: 55px;
+    /* border: 1px solid black;  */
+}
+.header-logo a {
+    display: block;
+    width: 55px;
+    height: 55px;
+    background: #ff6700 url(../img/mi-logo.png) no-repeat 50% 50%;
+}
+.header-logo a.lr {
+    text-align: left;
+    text-indent: -999992em;
+}
+
+/* .header-nav */
+.header-nav {
+    float: left;
+    width: 820px;
+    height: 100px;
+    /* border: 1px solid black;  */
+}
+.header-nav .nav-list {
+    width: 820px;
+    height: 88px;
+    font-size: 16px;
+    padding: 12px 0 0 20px;
+}
+.header-nav .nav-list .nav-category {
+    width: 127px;
+    padding: 0 15px 0 0;
+    float: left;
+}
+.header-nav .nav-list .nav-item {
+    float: left;
+}
+.header-nav .nav-list .nav-category a {
+    display: block;
+    padding: 26px 0px 38px;
+    text-align: right;
+    color: #333;
+}
+.header-nav .nav-list .nav-item a {
+    display: block;
+    padding: 26px 10px 38px;
+    color: #333;
+}
+*header-nav .nav-list .nav-item a::hover {
+    color: #ff6700;
+}
+
+
+.header-search {
+    float: left;
+    width: 296px;
+    height: 50px;
+    margin-top: 25px;
+    border: 1px solid black; 
 }
