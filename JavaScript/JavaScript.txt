@@ -130,3 +130,142 @@
 
     常用类与方法：查询w3c
     
+
+九、浏览器原理和js时间线
+
+    web编程  浏览器
+    页面： img 文字  DOM
+    底层： 浏览器-> BOM
+
+    浏览器  加载页面: 简单操作系统
+    1.输入一个网址
+    2.把网址转换为IP地址：服务器 -> IP   DNS服务器：
+
+    浏览器：多线程
+    1.js引擎
+    2.UI渲染
+    3.事件线程
+    4.发起请求的线程
+    5.定时器的线程
+
+    js：单线程  编程方便
+        同步任务
+        异步任务
+
+    js时间线:
+    第一阶段：载入阶段 默认：同步
+        1.获取页面内容1.html ->解析
+        2.DOM树： html
+                                head
+                                mate    title script
+        3.同步 1.js 下载
+                js解释器  脚本解析 执行
+        4.DOM树 ： html
+                                head
+                                mate    title script
+                                body
+                                。。。
+        5.解析完成
+        6.渲染 -> 文件下载  图片
+        7.载入完成
+    第二阶段：事件阶段 异步 onload
+
+    延迟加载
+    异步加载
+
+
+十、BOM
+    Windows 对象 -> 全局对象  全局方法
+    1.弹窗 -> 浏览器的弹窗：
+        同步：阻断
+        alert:
+        confirm:返回Boolear
+        prompt:返回字符串  用户输入
+
+    2.浏览器导航栏的信息
+        Windows.location 对象
+        属性 ： url的各个部分
+        location.replace("") //打开新页面或刷新页面（不填）
+
+    3.浏览器的前进与后退：
+    history
+    浏览器的信息：版本  厂家
+    navigator
+    获取浏览器的分辨率：
+    screen
+    4.计时器
+    循环执行： var sil = setInterval(函数名，时间)
+    一次执行： var sil = setTimeout(函数名，时间)
+            停止：clearTimeout(sil);
+    
+十一、DOM  文档对象模型
+    DOM树：
+        html文件  ->  人 -> 页面数据
+        浏览器  -> 数据结构 ->方便  查找 修改  遍历  操作
+
+        document 节点：只有一个
+        标签节点  元素节点 文本节点；
+        
+        查找节点三种常用方法：
+            1.通过id     document.getElementById("id");   返回节点
+            2.通过标签名字来查找    document.getElementBYTagName("");  返回数组
+            3.通过class来查找   document.getElementBYTClassName("");    返回数组
+            通过id只能document节点上使用，tag class可以任意节点开始查找
+
+            //创建p标签
+            var p = document.createElement("p");
+            //创建文本节点
+            var p1txt = document.createTextNode("p1");
+            //添加节点
+            p.appendendChild(p1txt);
+            //删除节点
+            div1.removeChild(p);
+            p.parentNode.removeChild(p);
+            //修改
+                1.html 定义好的属性 对象点 获取 修改
+                    class是关键字所以点classname
+                    对于style可以继续用点细分确切的样式
+                2.自定义属性
+                    获取属性.getAttribute
+                    设置属性.setAttribute
+                    删除属性.removeAttribute
+                3.内容
+                    p.innerHTML = ""; 可以放标签
+                    p.textContent = "";纯文本
+
+十二、事件
+    事件源：产生事件的地方
+    事件的类型：点击
+    事件对象： 记录好 信息
+    事件的处理程序：函数
+
+    注册的两种方式：
+    1.html的属性：
+        属性名：on+事件的名字  onclick
+        属性值： 方法
+                直接在html设定
+                通过js的元素对象来设定
+    2.通过系统提供的方法
+        addEventListener(事件类型click,函数add,事件的处理方式);
+    删除事件：removeEventListener();
+    ie8  attecheEvent() datachEvent()
+
+    事件函数：
+        事件对象 event  提供事件的详细信息
+            screenX/Y ：相对屏幕的左上角
+            clientX/Y： 相对浏览器的左上角
+        取消默认操作：event.preventDefault();
+                                如果是on方法创建的事件可以直接return false;
+
+    事件的传播：在默认的的情况下，点击页面的一个标签，处在传播路径的标签都会监听到对应的事件
+    传播路径：DOM树从根节点到标签形成的链就是传播路径。
+    事件流：接收顺序 1.从根到最终节点再2.最终节点返回根节点
+        两大阶段：1.捕获阶段 2.冒泡阶段（）
+        div1.addEventListener("client",div1Click,false/true)如果是true事件在捕获阶段直接，false事件在冒泡阶段执行
+        冒泡事件终止：event.stopPropagation();
+
+    事件代理：例如非常多的li，所以每个都绑定非常麻烦，所以根据冒泡原理在ul上绑定，通过event对象获取哪个被点击
+    
+
+
+
